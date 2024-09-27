@@ -8,6 +8,15 @@ body {
     padding: 40px 140px;
 }
 
+.dark {
+    background-color: #333;
+    color: white;
+}
+
+.dark h2 {
+    color: #4F9ACF;
+}
+
 .content {
     width: 600px;
     margin: 0 auto;
@@ -29,6 +38,11 @@ header {
     border-bottom: 1px solid;
     border-color: #aaaaaa;
     padding-bottom: 4px;
+}
+
+#theme {
+    float: left;
+    margin-top: 10px;
 }
 
 main {
