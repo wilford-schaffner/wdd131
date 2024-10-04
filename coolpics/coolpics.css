@@ -97,6 +97,10 @@ footer {
 }
 
 @media screen and (min-width: 1000px) {
+    button{
+        display: none;
+    }
+
     .gallery {
       grid-template-columns: 1fr 1fr 1fr;
       max-width: 1200px;
