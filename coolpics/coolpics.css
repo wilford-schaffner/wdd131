@@ -11,28 +11,29 @@
 
 * {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 header {
     background-color: rgb(80, 73, 151);
     font-family: var(--primary-font);
     text-align: center;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-    margin-top: 0px;
+    padding: 20px;
 }
 
 header h1 {
     color: var(--text-light)
 }
 
-.navbar ul {
+.links {
     list-style-type: none;
     padding: 0;
     margin: 0;
     text-align: center;
+    display: none;
+}
+
+ul.show {
+    display: block;
 }
 
 .navbar li {
@@ -47,6 +48,7 @@ button {
     font: inherit;
     color: var(--text-light);
     font-size: 1.5em;
+    cursor: pointer;
 }
 
 body {
@@ -57,14 +59,15 @@ body {
 }
 
 main {
+    margin-top: 30px;
     font-family: var(--secondary-font);
     text-align: center;
     flex-grow: 1
 }
 
 .gallery {
-    display: grid; /* Ensure it uses grid layout */
-    grid-template-columns: 1fr; /* Default for smaller screens */
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 figure {
