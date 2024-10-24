@@ -30,8 +30,8 @@ function viewHandler(event) {
   const clickedElement = event.target;
 
   if (clickedElement.tagName === 'IMG') {
-    const srcParts = clickedElement.src.split('-');
-    const fullSizeSrc = srcParts[0] + '-full.jpeg';
+    const srcParts = clickedElement.src.split('_');
+    const fullSizeSrc = srcParts[0] + '_full.jpeg';
     const altText = clickedElement.alt;
 
     const viewerHTML = viewerTemplate(fullSizeSrc, altText);
