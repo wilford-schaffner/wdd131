@@ -3,25 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credit Card</title>
+    <title>Credit Card Form</title>
+    <link rel="stylesheet" href="creditcard.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
 </head>
 <body>
     <form class="form">
-        <section class="front">
-            <label for="card-number">Card Number</label>
-            <input type="number" id="card-number" name="card-number">
+        <div class="front">
+            <div class="card-top">
+                <div class="total">TOTAL: $199</div>
+                <div class="card-icon"></div>
+            </div>
+            <div class="card-content">
+                <div class="card-number-container">
+                    <label for="card-number">CARD NUMBER</label>
+                    <input type="text" id="card-number" placeholder="1234 5678 9101 1020" maxlength="16">
+                </div>
+                <div class="card-bottom">
+                    <div class="card-holder-container">
+                        <label for="card-holder">CARD HOLDER</label>
+                        <input type="text" id="card-holder" placeholder="John Doe">
+                    </div>
+                    <div class="expiration-container">
+                        <label for="month">EXPIRATION</label>
+                        <div class="expiration-inputs">
+                            <input type="text" id="month" placeholder="MM" maxlength="2">
+                            <input type="text" id="year" placeholder="YY" maxlength="2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <label for="card-holder">Card Holder</label>
-            <input type="text" id="card-holder" name="card-holder">
-            <label for="month">Expiration</label>
-            <input type="number" id="month" name="month">
-            <input type="number" id="year" name="year">
-        </section>
-        <section class="back">
-            <label for="cvc">CVC/CVV</label>
-            <input type="number" name="cvc" id="cvc">
-        </section>
-        <button>Submit</button>
+        <div class="back">
+            <div class="magnetic-stripe"></div>
+            <div class="cvc-container">
+                <label for="cvc">CVC/CVV</label>
+                <input type="text" id="cvc" placeholder="xxx" maxlength="3">
+            </div>
+        </div>
+
+        <button type="submit">Submit</button>
     </form>
 </body>
 </html>
