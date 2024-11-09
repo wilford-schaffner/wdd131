@@ -48,3 +48,42 @@ document.getElementById('add').addEventListener('click', () => {
     const template = participantTemplate(participantCount)
     addButton.insertAdjacentHTML('beforebegin', template);
 });
+
+function successTemplate(info) {
+    return `Thank you ${info.name} for registering. You have registered ${info.participants} participants and owe $${info.fees} in Fees.`;
+  }
+  
+  function totalFees() {
+    let feeElements = document.querySelectorAll("[id^=fee]");
+    feeElements = [...feeElements];
+    
+    return feeElements.reduce((total, feeElement) => {
+      const fee = parseFloat(feeElement.value) || 0;
+      return total + fee;
+    }, 0);
+  }
+  
+  function submitForm(event) {
+    event.preventDefault();
+    
+    const adultName = document.getElementById('adult_name').value;
+    
+    const participantCount = document.querySelectorAll('section[class^="participant"]').length;
+    
+    const totalFee = totalFees();
+    
+    const summaryInfo = {
+      name: adultName,
+      participants: participantCount,
+      fees: totalFee.toFixed(2)
+    };
+    
+    const form = document.querySelector('form');
+    form.style.display = 'none';
+    
+    const summarySection = document.getElementById('summary');
+    summarySection.innerHTML = successTemplate(summaryInfo);
+    summarySection.style.display = 'block';
+  }
+  
+  document.querySelector('form').addEventListener('submit', submitForm);
